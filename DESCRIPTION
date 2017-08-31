@@ -1,11 +1,12 @@
 Package: cprr
 Type: Package
-Title: Functions for working with Danish CPR numbers
+Title: Functions for Working With Danish CPR Numbers
 Version: 0.1.0
 Author: Jacob Anhoej
 Maintainer: Jacob Anhoej <jacob@anhoej.net>
 Description: Calculate date of birth, age and sex from CPR number.
-    Use four spaces when indenting paragraphs within the Description.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
+URL: http://github.com/anhoej/cprr
+BugReports: http://github.com/anhoej/cprr/issues
