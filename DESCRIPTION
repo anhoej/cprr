@@ -2,7 +2,8 @@ Package: cprr
 Version: 0.0.0.9000
 Type: Package
 Title: Functions for Working With Danish CPR Numbers
-Description: Calculate date of birth, age and gender from CPR number.
+Description: Calculate date of birth, age, gender, and random "anonymous"
+    numbers from CPR numbers.
 Author: Jacob Anhoej
 Maintainer: Jacob Anhoej <jacob@anhoej.net>
 License: GPL-3
