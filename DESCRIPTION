@@ -1,11 +1,11 @@
 Package: cprr
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Functions for working with Danish CPR numbers
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
+Author: Jacob Anhoej
+Maintainer: Jacob Anhoej <jacob@anhoej.net>
+Description: Calculate date of birth, age and sex from CPR number.
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
