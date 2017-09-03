@@ -2,7 +2,7 @@
 #'
 #' Calculate dates of birth from CPR numbers.
 #'
-#' @param cpr Character Vector of CPR numbers with or without hyphens.
+#' @param cpr Character vector of CPR numbers with or without hyphens.
 #'
 #' @return Vector of dates of birth.
 #'
@@ -73,13 +73,13 @@ dob <- function(cpr) {
 #'
 #' Calculate ages from CPR numbers.
 #'
-#' @param cpr Character Vector of CPR numbers with or without hyphens.
+#' @param cpr Character vector of CPR numbers with or without hyphens.
 #' @param date Character or date vector of dates used in computation of ages.
 #'   Dates provided as characters must follow the ISO standard, 'yyyy-mm-dd'.
 #' @param unit Character indicating the unit representing ages. Possible values
 #'   are: 'year', 'month', 'week', 'day'.
 #'
-#' @return A numeric vector of ages. By default, ages are computed in years.
+#' @return Numeric vector of ages. By default ages are computed in years.
 #'   Note that year and month units are calculated by approximaion, 1 year =
 #'   365.25 days, 1 month = 30.44 days.
 #'
@@ -107,9 +107,9 @@ age <- function(cpr, date = Sys.Date(), unit = 'year') {
 #'
 #' Calculate genders from CPR numbers.
 #'
-#' @param cpr Character Vector of CPR numbers with or without hyphens.
+#' @param cpr Character vector of CPR numbers with or without hyphens.
 #'
-#' @return Integer vector of genders. 0 = Female, 1 = Male.
+#' @return Integer vector of genders: 0 = female, 1 = male.
 #'
 #' @examples
 #'   gender(c('1508631111', '1310762222'))
@@ -123,19 +123,19 @@ gender <- function(cpr) {
 
 #' Scramble
 #'
-#' Make "ananymous" random CPR numbers to random numbers.
+#' Make "anonymous" random CPR numbers to random numbers.
 #'
-#' @param cpr Character Vector of CPR numbers with or without hyphens.
+#' @param cpr Character vector of CPR numbers with or without hyphens.
 #'
 #' @return A data frame with corresponding CPR and anonymous id numbers.
 #'
 #' @examples
-#'   scramble(c('1508631111', '1310762222'))
+#'   scramble(c('1508631111', '1310762222', '1508631111'))
 #'
 #' @export
 #'
 scramble <- function(cpr) {
-  x        <- seq_along(sample(unique(cpr)))
+  x        <- seq_along(unique(cpr))
   names(x) <- sample(unique(cpr))
   x        <- x[cpr]
   names(x) <- NULL
@@ -143,6 +143,10 @@ scramble <- function(cpr) {
 }
 
 clean <- function(cpr) {
+  if(typeof(cpr) != 'character') {
+    stop('CPR numbers must be provided as character strings.')
+  }
+
   cpr <- gsub('[^[:alnum:]]+', '', cpr)
 
   if(any(nchar(cpr[!is.na(cpr)]) != 10)) {

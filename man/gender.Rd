@@ -7,10 +7,10 @@
 gender(cpr)
 }
 \arguments{
-\item{cpr}{Character Vector of CPR numbers with or without hyphens.}
+\item{cpr}{Character vector of CPR numbers with or without hyphens.}
 }
 \value{
-Integer vector of genders. 0 = Female, 1 = Male.
+Integer vector of genders: 0 = female, 1 = male.
 }
 \description{
 Calculate genders from CPR numbers.

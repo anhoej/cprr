@@ -7,7 +7,7 @@
 dob(cpr)
 }
 \arguments{
-\item{cpr}{Character Vector of CPR numbers with or without hyphens.}
+\item{cpr}{Character vector of CPR numbers with or without hyphens.}
 }
 \value{
 Vector of dates of birth.
