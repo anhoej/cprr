@@ -23,23 +23,31 @@ Calculate date of birth, age, and gender, and generate anonymous sequence number
 ## Examples
 
 ```{r example}
-# Load cprr
+# Load cprr.
 library(cprr)
 
-# Make vector of example cpr numbers
+# Make vector of example cpr numbers.
 cpr <- c('150863-1111', '020962-4444', '131076-2222', '150863-1111')
 
-# Caluculate dates of birth from cpr numbers
+# Caluculate dates of birth from cpr numbers.
 dob(cpr)
 
-# Calculate ages from cpr numbers
+# Calculate ages from cpr numbers.
 age(cpr)
 
-# Calculate genders from cpr numbers
+# Calculate genders from cpr numbers.
 gender(cpr)
 
-# Generate anonymous sequence numbers from cpr numbers
+# Generate anonymous sequence numbers from cpr numbers.
 scramble(cpr)
+
+# Make data frame from build in data set of official test cpr numbers.
+data.frame(
+  cpr    = test_cpr$cpr,
+  id     = scramble(test_cpr$cpr),
+  dob    = dob(test_cpr$cpr),
+  gender = gender(test_cpr$cpr)
+)
 ```
 
 
