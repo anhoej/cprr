@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Build Status](https://travis-ci.org/anhoej/cprr.svg?branch=master)](https://travis-ci.org/anhoej/cprr)
+
 # cprr
 
 Functions for working with Danish CPR numbers.
