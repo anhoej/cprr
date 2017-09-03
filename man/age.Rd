@@ -7,7 +7,7 @@
 age(cpr, date = Sys.Date(), unit = "year")
 }
 \arguments{
-\item{cpr}{Character Vector of CPR numbers without hyphen (10 digits).}
+\item{cpr}{Character Vector of CPR numbers with or without hyphens.}
 
 \item{date}{Character or date vector of dates used in computation of ages.
 Dates provided as characters must follow the ISO standard, 'yyyy-mm-dd'.}
@@ -21,7 +21,7 @@ A numeric vector of ages. By default, ages are computed in years.
   365.25 days, 1 month = 30.44 days.
 }
 \description{
-Calculate age from CPR number
+Calculate ages from CPR numbers.
 }
 \examples{
   age(c('1508631111', '1310762222'))

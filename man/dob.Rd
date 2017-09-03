@@ -7,13 +7,13 @@
 dob(cpr)
 }
 \arguments{
-\item{cpr}{Character Vector of CPR numbers without hyphens (10 digits).}
+\item{cpr}{Character Vector of CPR numbers with or without hyphens.}
 }
 \value{
 Vector of dates of birth.
 }
 \description{
-Calculate date of birth from CPR number.
+Calculate dates of birth from CPR numbers.
 }
 \examples{
   dob(c('1508631111', '1310762222'))
