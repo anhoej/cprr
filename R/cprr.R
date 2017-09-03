@@ -53,8 +53,8 @@ dob <- function(cpr) {
       }
 
       yyyy <- yyyy + yy
-      dob <- paste(yyyy, mm, dd, sep = '-')
-      dob <- tryCatch(as.Date(dob),
+      dob  <- paste(yyyy, mm, dd, sep = '-')
+      dob  <- tryCatch(as.Date(dob),
                       error = function(e) NA)
       if(is.na(dob)) {
         warning(paste(cpr, 'is not a valid CPR number. NA returned.'),
@@ -92,14 +92,14 @@ age <- function(cpr, date = Sys.Date(), unit = 'year') {
   cpr <- clean(cpr)
 
   u <- switch(unit,
-              'year' = 365.25,
+              'year'  = 365.25,
               'month' = 30.44,
-              'week' = 7,
-              'day' = 1)
+              'week'  = 7,
+              'day'   = 1)
 
   d1 <- dob(cpr)
   d2 <- as.Date(date)
-  a <- as.numeric(d2 - d1, units = 'days')
+  a  <- as.numeric(d2 - d1, units = 'days')
   a / u
 }
 
@@ -118,9 +118,7 @@ age <- function(cpr, date = Sys.Date(), unit = 'year') {
 #'
 gender <- function(cpr) {
   cpr <- clean(cpr)
-
   as.numeric(substring(cpr, 10)) %% 2
-
 }
 
 #' Scramble
@@ -137,9 +135,9 @@ gender <- function(cpr) {
 #' @export
 #'
 scramble <- function(cpr) {
-  x <- seq_along(sample(unique(cpr)))
+  x        <- seq_along(sample(unique(cpr)))
   names(x) <- sample(unique(cpr))
-  x <- x[cpr]
+  x        <- x[cpr]
   names(x) <- NULL
   x
 }
@@ -150,5 +148,6 @@ clean <- function(cpr) {
   if(any(nchar(cpr[!is.na(cpr)]) != 10)) {
     stop('One or more invalid CPR numbers.')
   }
+
   cpr
 }
