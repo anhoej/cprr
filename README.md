@@ -1,5 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+[![Build Status](https://travis-ci.org/anhoej/cprr.svg?branch=master)](https://travis-ci.org/anhoej/cprr)
+
 cprr
 ====
 
@@ -31,7 +33,7 @@ gender(cpr)
 
 # Generate anonymous sequence numbers from cpr numbers
 scramble(cpr)
-#> [1] 1 3 2 1
+#> [1] 2 1 3 2
 ```
 
 Installation
