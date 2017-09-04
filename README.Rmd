@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 Functions for working with Danish CPR numbers.
 
-Calculate date of birth, age, and gender, and generate anonymous sequence numbers from CPR numbers.
+Calculate date of birth, age, and gender, and generate anonymous sequence numbers from CPR numbers. Also modulo 11 check is available, though this function is only relevant for cpr numbers untill 2007.
 
 ## Examples
 
@@ -27,7 +27,7 @@ Calculate date of birth, age, and gender, and generate anonymous sequence number
 library(cprr)
 
 # Make vector of example cpr numbers.
-cpr <- c('150863-1111', '020962-4444', '131076-2222', '150863-1111')
+cpr <- c('1508631111', '020962-4444', '131076-2222', '1508631111', '2110625629')
 
 # Caluculate dates of birth from cpr numbers.
 dob(cpr)
@@ -41,12 +41,17 @@ gender(cpr)
 # Generate anonymous sequence numbers from cpr numbers.
 scramble(cpr)
 
+# Perform modulo 11 check of cpr numbers.
+mod11(cpr)
+
 # Make data frame from build in data set of official test cpr numbers.
+cpr <- test_cpr$cpr
 data.frame(
-  cpr    = test_cpr$cpr,
-  id     = scramble(test_cpr$cpr),
-  dob    = dob(test_cpr$cpr),
-  gender = gender(test_cpr$cpr)
+  cpr    = cpr,
+  id     = scramble(cpr),
+  dob    = dob(cpr),
+  gender = gender(cpr),
+  mod11  = mod11(cpr)
 )
 ```
 

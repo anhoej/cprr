@@ -3,4 +3,5 @@
 export(age)
 export(dob)
 export(gender)
+export(mod11)
 export(scramble)

@@ -55,7 +55,7 @@ dob <- function(cpr) {
       yyyy <- yyyy + yy
       dob  <- paste(yyyy, mm, dd, sep = '-')
       dob  <- tryCatch(as.Date(dob),
-                      error = function(e) NA)
+                       error = function(e) NA)
       if(is.na(dob)) {
         warning(paste(cpr, 'is not a valid CPR number. NA returned.'),
                 call. = FALSE)
@@ -154,4 +154,35 @@ clean <- function(cpr) {
   }
 
   cpr
+}
+
+#' Modulo 11 check
+#'
+#' Check if CPR numbers conform to modulo 11 check. Note, modulo 11 check was
+#' deprecated in 2007.
+#'
+#' @param cpr Character vector of CPR numbers with or without hyphens.
+#'
+#' @return Logical vector of check results, NA if CPR number includes characters
+#'   (temporary CPR number).
+#'
+#' @examples
+#'   mod11(c('1508631111', '1310762222', '2110625629'))
+#'
+#' @export
+#'
+mod11 <- function(cpr) {
+  cpr <- clean(cpr)
+  cpr <- strsplit(cpr, NULL)
+
+  cpr <- lapply(cpr, function(cpr) {
+    tryCatch(as.integer(cpr), warning = function(e) NA)
+  })
+
+  cpr <- lapply(cpr, function(cpr) {
+    x <- c(4, 3, 2, 7, 6, 5, 4, 3, 2, 1)
+    sum(cpr * x) %% 11 == 0
+  })
+
+  unlist(cpr)
 }
