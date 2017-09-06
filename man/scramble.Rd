@@ -10,10 +10,10 @@ scramble(cpr)
 \item{cpr}{Character vector of CPR numbers with or without hyphens.}
 }
 \value{
-A data frame with corresponding CPR and anonymous id numbers.
+Integer vector. Each integer represents one unique CPR number.
 }
 \description{
-Make "anonymous" random CPR numbers to random numbers.
+Make "anonymous" random numbers from CPR numbers.
 }
 \examples{
   scramble(c('1508631111', '1310762222', '1508631111'))

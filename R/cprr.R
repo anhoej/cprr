@@ -123,11 +123,11 @@ gender <- function(cpr) {
 
 #' Scramble
 #'
-#' Make "anonymous" random CPR numbers to random numbers.
+#' Make "anonymous" random numbers from CPR numbers.
 #'
 #' @param cpr Character vector of CPR numbers with or without hyphens.
 #'
-#' @return A data frame with corresponding CPR and anonymous id numbers.
+#' @return Integer vector. Each integer represents one unique CPR number.
 #'
 #' @examples
 #'   scramble(c('1508631111', '1310762222', '1508631111'))
