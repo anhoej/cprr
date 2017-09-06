@@ -16,8 +16,6 @@ knitr::opts_chunk$set(
 
 # cprr
 
-Functions for working with Danish CPR numbers.
-
 Calculate date of birth, age, and gender, and generate anonymous sequence numbers from CPR numbers. Also modulo 11 check is available, though this function is only relevant for cpr numbers until 2007.
 
 ## Examples
