@@ -1,5 +1,5 @@
 Package: cprr
-Version: 0.1.1
+Version: 0.1.1.9000
 Type: Package
 Title: Functions for Working with Danish CPR Numbers
 Description: Calculate date of birth, age, and gender, and generate anonymous
