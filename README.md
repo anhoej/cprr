@@ -1,11 +1,9 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-[![Build Status](https://travis-ci.org/anhoej/cprr.svg?branch=master)](https://travis-ci.org/anhoej/cprr)
+[![Build Status](https://travis-ci.org/anhoej/cprr.svg?branch=master)](https://travis-ci.org/anhoej/cprr) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/cprr)](https://cran.r-project.org/package=cprr)
 
 cprr
 ====
-
-Functions for working with Danish CPR numbers.
 
 Calculate date of birth, age, and gender, and generate anonymous sequence numbers from CPR numbers. Also modulo 11 check is available, though this function is only relevant for cpr numbers until 2007.
 
@@ -25,7 +23,7 @@ dob(cpr)
 
 # Calculate ages from cpr numbers.
 age(cpr)
-#> [1]  54.06160  55.01164  40.89802  54.06160 154.87474
+#> [1]  54.06434  55.01437  40.90075  54.06434 154.87748
 
 # Calculate genders from cpr numbers.
 gender(cpr)
@@ -33,7 +31,7 @@ gender(cpr)
 
 # Generate anonymous sequence numbers from cpr numbers.
 scramble(cpr)
-#> [1] 3 2 4 3 1
+#> [1] 3 1 4 3 2
 
 # Perform modulo 11 check of cpr numbers.
 mod11(cpr)
@@ -49,36 +47,36 @@ data.frame(
   mod11  = mod11(cpr)
 )
 #>           cpr id        dob gender mod11
-#> 1  0104909995 29 1990-04-01      1 FALSE
-#> 2  0104909989 22 1990-04-01      1 FALSE
-#> 3  0107729995 28 1972-07-01      1 FALSE
-#> 4  0108589995 25 1958-08-01      1 FALSE
-#> 5  0108629996  7 1962-08-01      0 FALSE
-#> 6  0201609995 17 1960-01-02      1 FALSE
-#> 7  0201609996 18 1960-01-02      0 FALSE
-#> 8  0201919990  5 1991-01-02      0 FALSE
-#> 9  0201919995  3 1991-01-02      1 FALSE
-#> 10 0201919996 30 1991-01-02      0 FALSE
-#> 11 0211223989 26 1922-11-02      1 FALSE
-#> 12 0212159995  6 2015-12-02      1 FALSE
-#> 13 0504909989 27 1990-04-05      1 FALSE
-#> 14 0504909995 15 1990-04-05      1 FALSE
-#> 15 0506889996 20 1988-06-05      0 FALSE
-#> 16 1007059995  4 2005-07-10      1 FALSE
-#> 17 1110109996 12 2010-10-11      0 FALSE
-#> 18 1310169995 21 2016-10-13      1 FALSE
-#> 19 1310169996  8 2016-10-13      0 FALSE
-#> 20 1502779995 24 1977-02-15      1 FALSE
-#> 21 1502799995 10 1979-02-15      1 FALSE
-#> 22 1502829995 14 1982-02-15      1 FALSE
-#> 23 1509819996 23 1981-09-15      0 FALSE
-#> 24 2103009996  9 2000-03-21      0 FALSE
-#> 25 2311143995  1 1914-11-23      1 FALSE
-#> 26 2509479989 13 1947-09-25      1 FALSE
-#> 27 2512489996 19 1948-12-25      0 FALSE
-#> 28 2911829996  2 1982-11-29      0 FALSE
-#> 29 3001749995 11 1974-01-30      1 FALSE
-#> 30 3103979995 16 1997-03-31      1 FALSE
+#> 1  0104909995  4 1990-04-01      1 FALSE
+#> 2  0104909989 25 1990-04-01      1 FALSE
+#> 3  0107729995 27 1972-07-01      1 FALSE
+#> 4  0108589995 17 1958-08-01      1 FALSE
+#> 5  0108629996  9 1962-08-01      0 FALSE
+#> 6  0201609995 19 1960-01-02      1 FALSE
+#> 7  0201609996 22 1960-01-02      0 FALSE
+#> 8  0201919990 29 1991-01-02      0 FALSE
+#> 9  0201919995 23 1991-01-02      1 FALSE
+#> 10 0201919996 24 1991-01-02      0 FALSE
+#> 11 0211223989  1 1922-11-02      1 FALSE
+#> 12 0212159995 30 2015-12-02      1 FALSE
+#> 13 0504909989 15 1990-04-05      1 FALSE
+#> 14 0504909995  8 1990-04-05      1 FALSE
+#> 15 0506889996 26 1988-06-05      0 FALSE
+#> 16 1007059995 14 2005-07-10      1 FALSE
+#> 17 1110109996 18 2010-10-11      0 FALSE
+#> 18 1310169995  6 2016-10-13      1 FALSE
+#> 19 1310169996 13 2016-10-13      0 FALSE
+#> 20 1502779995 10 1977-02-15      1 FALSE
+#> 21 1502799995  7 1979-02-15      1 FALSE
+#> 22 1502829995 12 1982-02-15      1 FALSE
+#> 23 1509819996 20 1981-09-15      0 FALSE
+#> 24 2103009996 21 2000-03-21      0 FALSE
+#> 25 2311143995 11 1914-11-23      1 FALSE
+#> 26 2509479989 16 1947-09-25      1 FALSE
+#> 27 2512489996  5 1948-12-25      0 FALSE
+#> 28 2911829996  3 1982-11-29      0 FALSE
+#> 29 3001749995  2 1974-01-30      1 FALSE
+#> 30 3103979995 28 1997-03-31      1 FALSE
 ```
 
 Installation
