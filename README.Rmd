@@ -57,11 +57,17 @@ data.frame(
 
 ## Installation
 
-You can install cprr from github with:
+You can install development version from github:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("anhoej/cprr")
+```
+
+Or stable version from CRAN:
+
+```{r cran-installation, eval = FALSE}
+install.packages("cprr")
 ```
 
 ## About CPR numbers
