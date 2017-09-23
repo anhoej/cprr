@@ -150,7 +150,7 @@ clean <- function(cpr) {
   cpr <- gsub('[^[:alnum:]]+', '', cpr)
 
   if(any(nchar(cpr[!is.na(cpr)]) != 10)) {
-    stop('One or more invalid CPR numbers.')
+    warning('One or more CPR numbers of incorrect length.')
   }
 
   cpr
@@ -180,8 +180,12 @@ mod11 <- function(cpr) {
   })
 
   cpr <- lapply(cpr, function(cpr) {
-    x <- c(4, 3, 2, 7, 6, 5, 4, 3, 2, 1)
-    sum(cpr * x) %% 11 == 0
+    if(length(cpr) == 10) {
+      x <- c(4, 3, 2, 7, 6, 5, 4, 3, 2, 1)
+      sum(cpr * x) %% 11 == 0
+    } else {
+      FALSE
+    }
   })
 
   unlist(cpr)
