@@ -21,7 +21,7 @@ dob <- function(cpr) {
     yy <- as.numeric(substr(cpr, 5, 6))
     x7 <- as.numeric(substr(cpr, 7, 7))
 
-    if(is.na(cpr)) {
+    if(is.na(cpr) | is.na(x7)) {
       NA
     } else {
       if(x7 < 4) {
