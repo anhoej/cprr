@@ -56,6 +56,7 @@ dob <- function(cpr) {
       dob  <- paste(yyyy, mm, dd, sep = '-')
       dob  <- tryCatch(as.Date(dob),
                        error = function(e) NA)
+
       if(is.na(dob)) {
         warning(paste(cpr, 'is not a valid CPR number. NA returned.'),
                 call. = FALSE)
@@ -150,7 +151,8 @@ clean <- function(cpr) {
   cpr <- gsub('[^[:alnum:]]+', '', cpr)
 
   if(any(nchar(cpr[!is.na(cpr)]) != 10)) {
-    warning('One or more CPR numbers of incorrect length.')
+    warning('One or more CPR numbers of incorrect length replaced with NA.')
+    cpr[nchar(cpr) != 10] <- NA
   }
 
   cpr

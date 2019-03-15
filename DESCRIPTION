@@ -12,6 +12,6 @@ Encoding: UTF-8
 LazyData: true
 URL: http://github.com/anhoej/cprr
 BugReports: http://github.com/anhoej/cprr/issues
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: testthat
 Depends: R (>= 3.1.0)
